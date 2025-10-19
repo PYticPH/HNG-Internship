@@ -71,4 +71,3 @@ You only need a modern web browser (Chrome, Firefox, Safari, Edge) to view the c
     ```
 
 The Profile Card will load immediately, and the **Current Time in Milliseconds** counter will begin updating.
-```eof
