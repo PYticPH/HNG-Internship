@@ -1,0 +1,58 @@
+<!Doctype HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile card</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <article
+            aria-labelledby="about-me-heading"  data-testid="test-profile-card">
+            <div class="card">
+                <figure class="img-container" role="img" aria-label="Profile picture of me">
+                    <img src="images/profile.jpeg" id="profile-picture" alt="profile picture" data-testid="test-user-avatar">
+                </figure>
+                <!-- Header Section -->
+                <div class="profile-data">
+                    <div class="user-info">
+                        <h2 id="user-name" data-testid="test-user-name">Emmanuel Dada</h2>
+                        <p class="bio" data-testid="test-user-bio">
+                            Hello! I'm a Frontend Developer with a sharp eye for elegant design
+                            and a deep commitment to writing clean, secure code.
+                        </p>
+                    </div>
+                    
+                    <!-- Nav section -->
+                    <nav class="social-links" aria-label="Social media connections" data-testid="test-user-social-links">
+                        <a href="https://x.com/Pyticph" class="social-link" target="_blank" tabindex="0" aria-label="Connect with me on X" data-testid="test-user-social-x">X</a>
+                        <a href="https://www.linkedin.com/in/emmanuel-dada-53a2811ba/" class="social-link" target="_blank" tabindex="0" aria-label="Connect with me on LinkedIn" data-testid="test-user-social-linkedin">LinkedIn</a>
+                        <a href="https://github.com/Pyticph" class="social-link" target="_blank" tabindex="0" aria-label="Connect with me on GitHub" data-testid="test-user-social-github">GitHub</a>
+                    </nav>
+
+                    <!-- User character section -->
+                     <section class="characteristics">
+                        <div class="hobbies">
+                            <h3>My Hobbies</h3>
+                            <ul aria-label="List of Hobbies" data-testid="test-user-hobbies">
+                                <li>Coding</li>
+                                <li>Debugging</li>
+                                <li>Video gaming</li>
+                            </ul>
+                        </div>
+                        <div class="dislikes">
+                            <h3>My Dislikes</h3>
+                            <ul aria-label="List of Dislikes" data-testid="test-user-dislikes">
+                                <li>Procrastination</li>
+                                <li>Poor communication</li>
+                                <li>Cluttered code</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <p class="current-time">Current time (ms): <time id="current-time" data-testid="test-user-time">2:30 PM</time></p>
+                </div>
+            </div>
+        </article>
+        <script src="script.js"></script>
+    </body>
+</html>
