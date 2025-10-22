@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #131212e8;
+    font: 1.1rem/1.3 Arial, sans-serif;
+    padding: 20px;
+}
+
+.about-card {
+    max-width: 800px;
+    background: linear-gradient(45deg, #76b8d6 20%, #f0f0f0de 50%);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px #0000001a;
+    padding: 20px;
+    color: #474545;
+    margin: 20px auto;
+}
+
+h1, h2 {
+    color: #686464;
+}
+
+h2 {
+    font-size: 1.1em;
+    font-family: Tahoma, Verdana, sans-serif;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figure img {
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 50%; 
+}
+
+/* BIO SECTION */
+.bio {
+    display: flex;
+}
+
+.profile-data {
+    padding: 20px 50px;
+}
+
+
+.bio p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* LIST SECTIONS */
+.goals, 
+.improvement-areas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px #0000001a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* UL in List Sections */
+:is(.goals, .improvement-areas) ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+/* NOTE SECTIONS */
+.note-to-future-self, 
+.extra-thought {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px #0000001a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* H2 in Note Sections */
+.note-to-future-self h2, 
+.extra-thought h2 {
+    background-color: #e0e0e0;
+    display: inline-block;
+}
+
+/* Paragraphs in Note Sections */
+:is(.note-to-future-self, .extra-thought) p {
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* LIST ITEMS */
+li {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #0000001a;
+}
+
+li:hover {
+    background-color: #dcdcdc;
+    cursor: pointer;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+    margin: 0;
+    padding-left: 15px;
+    border-left: 4px solid #cccccc;
+    color: #555555;
+    font-style: italic;
+}
+
+/** Form Styles **/
+
+.contact-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #dfdbdb;
+    width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px #0000001a;
+    padding: 20px;
+    color: #474545;
+    margin: 20px auto;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+button {
+    display: block;
+    width: 100%;
+    background-color: #2291c5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: #1b6f91;
+}
+
+.error-message {
+    color: #cc0000;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+input[aria-invalid="true"], textarea[aria-invalid="true"] {
+    border: 2px solid #cc0000;
+}
+.success-message {
+    color: #008000;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .about-card {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .bio {
+        flex-direction: column;
+    }
+
+    .profile-data {
+        padding: 15px 0;
+    }
+
+    .goals, 
+    .improvement-areas {
+        flex-direction: column;
+    }
+
+    :is(.goals, .improvement-areas) ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    .contact-card form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contact-card form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contact-card button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .about-card {
+        min-width: 200px;
+        padding: 10px;
+    }   
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    figure img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contact-card form {
+        min-width: 200px;
+        padding: 10px;
+} 
