@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/styles-2.css" />
+        <title>Contact me</title>
+    </head>
+    <body>
+        <main class="contact-card">
+            <section class="contact-form">
+                <h1>Contact Me</h1>
+                <form id="contact-form">
+            
+                    <label for="full-name">Name:</label>
+                    <input 
+                        type="text" 
+                        id="full-name" 
+                        name="full-name" 
+                        data-testid="test-contact-name" 
+                        placeholder="Enter your full name" required/>
+                    <span data-testid="test-contact-error-name" class="error-message" aria-live="polite"></span>
+
+                    <label for="email">Email:</label>
+                    <input type="email" 
+                        id="email" 
+                        name="email" 
+                        data-testid="test-contact-email" 
+                        placeholder="Enter your email"
+                        pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required />
+                    <span data-testid="test-contact-error-email" class="error-message" aria-live="polite"></span>
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" 
+                        id="subject" 
+                        name="subject" 
+                        data-testid="test-contact-subject" 
+                        placeholder="Enter the subject" required />
+                    <span data-testid="test-contact-error-subject" class="error-message" aria-live="polite"></span>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" 
+                        name="message" 
+                        minlength="10" 
+                        rows="5" 
+                        data-testid="test-contact-message" required></textarea>
+                    <span data-testid="test-contact-error-message" class="error-message" aria-live="polite"></span>
+
+                    <button type="submit" data-testid="test-contact-submit">Send Message</button>
+            
+                    <p data-testid="test-contact-success" class="success-message" style="display: none;"></p>
+                </form>
+            </section>
+        </main>
+        <script src="js/script.js"></script>
+    </body>
+</html>
