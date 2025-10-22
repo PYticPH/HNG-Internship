@@ -1,73 +1,88 @@
-# 👤 Accessible & Testable Profile Card Component
+***
 
-A modern, responsive, and highly accessible Profile Card built using pure **HTML, CSS, and Vanilla JavaScript**. This project serves as a clear demonstration of frontend best practices, focusing heavily on **semantic markup**, **WCAG accessibility standards**, and **robust testability** via required data attributes.
+## 📚 Study Material
 
----
+Ensure you are familiar with the following concepts before proceeding:
 
-## ✨ Key Features & Goals
+* **Semantic HTML & Accessibility:** [MDN - Accessibility: HTML](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML)
+* **Form Validation in HTML/JS:** [MDN - Form Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+* **Accessibility for Forms:** [W3C - Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/)
+* **Responsive CSS Layouts:** [CSS Tricks - Media Queries](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
 
-This component was developed with strict adherence to core modern frontend principles:
+***
 
-### 1. **Accessibility First (A11y)**
-* **Semantic HTML:** Utilizes appropriate tags like `<article>`, `<figure>`, `<nav>`, and `<section>` to give meaning and structure to the content, enhancing screen reader compatibility.
-* **Keyboard Navigation:** All interactive elements (links) are properly **keyboard-focusable** with clear focus styles.
-* **Secure Links:** Social links open in a new tab using `target="_blank"` combined with the security attributes `rel="noopener noreferrer"`.
-* **Accessible Images:** The avatar image includes a required `alt` attribute.
+## ✅ Task: Two New Pages
 
-### 2. **Responsive Design**
-* The layout is built using **modern CSS (Flexbox/Grid)** and adapts flawlessly to different screen sizes.
-* Content stacks **vertically** on mobile for optimal reading and transitions to a clean **side-by-side** layout on wider screens (tablet/desktop).
+You are required to create two new pages: a **Contact Us Page** with client-side form validation and an **About Me Page** for personal reflections.
 
-### 3. **High Testability**
-* Every single required visible element on the card is tagged with a specific `data-testid` attribute, enabling stable and reliable end-to-end automated testing.
+### 1. Contact Us Page
 
----
+Create a simple, accessible contact form with comprehensive client-side validation.
 
-## 🛠️ Component Requirements & Implementation
-
-The card displays essential user data and dynamic elements:
-
-| Element Description | Required `data-testid` | Implementation Notes |
+| Field | `data-testid` | Validation Rules |
 | :--- | :--- | :--- |
-| **Profile Card Root** | `test-profile-card` | Wrapped in an `<article>` tag. |
-| **User Name** | `test-user-name` | Typically an `<h2>` for proper document outline. |
-| **Short Biography** | `test-user-bio` | A standard `<p>` tag. |
-| **Current Time (ms)** | `test-user-time` | Dynamically updated via Vanilla JS (`Date.now()`). |
-| **Avatar Image** | `test-user-avatar` | Contained within a `<figure>` with a descriptive `alt` attribute. |
-| **Social Links Container** | `test-user-social-links` | Presented as a list (`<ul>` or within a `<nav>`). |
-| **Hobbies List** | `test-user-hobbies` | A distinct list (`<ul>/<li>`) within a `<section>`. |
-| **Dislikes List** | `test-user-dislikes` | A distinct list (`<ul>/<li>`) within its own `<section>`. |
+| **Full name** | `test-contact-name` | Required |
+| **Email** | `test-contact-email` | Required, Must be valid (e.g., `name@example.com`) |
+| **Subject** | `test-contact-subject` | Required |
+| **Message** | `test-contact-message` | Required, **Min length: 10 characters** |
 
-***Note:** Individual social links can optionally include specific test IDs, e.g., `data-testid="test-user-social-twitter"`.***
+#### Submission Handling:
 
----
+* **Submit Button:** `data-testid="test-contact-submit"`
+* **Error Messages:** Use `data-testid="test-contact-error-<field>"` (e.g., `test-contact-error-email`).
+* **Success Message:** Use `data-testid="test-contact-success"` (only shows after valid submission).
 
-## 🚀 Getting Started
+#### Accessibility:
 
-This project is a static component built entirely with foundational web technologies, meaning there are no build steps required.
+* All inputs **must** have `<label>`s linked using the `for` attribute.
+* Error messages **must** be programmatically tied to their respective inputs using **`aria-describedby`**.
+* The entire form must be **keyboard accessible** and navigable.
 
-### Prerequisites
+***
 
-You only need a modern web browser (Chrome, Firefox, Safari, Edge) to view the component.
+### 2. About Me Page
 
-### Installation and Viewing
+Create a reflective page to share your thoughts and goals.
 
-1.  **Clone the repository:**
+| Section | `data-testid` | Semantic Requirements |
+| :--- | :--- | :--- |
+| **Main Wrapper** | `test-about-page` | Must be the `<main>` element. |
+| **Bio** | `test-about-bio` | Use semantic elements for profile image, description, etc. |
+| **Goals in this program** | `test-about-goals` | Use an unordered list (`<ul>`). |
+| **Areas of low confidence** | `test-about-confidence` | Use an unordered list (`<ul>`). |
+| **Note to future self** | `test-about-future-note` | Use paragraphs (`<p>`). |
+| **Extra thoughts** | `test-about-extra` | Use blockquote (`<blockquote>`) if quoting. |
 
-    ```bash
-    git clone [Your Repository URL Here]
-    cd accessible-profile-card
-    ```
+#### Semantic Structure:
 
-2.  **Open the file:**
-    Navigate to the project directory and open the main `index.html` file in your browser.
+* Wrap the entire page content with `<main data-testid="test-about-page">`.
+* Use `<section>` for each required area/thought group.
+* Use **proper heading hierarchy** (`<h1>`, `<h2>`, etc.) for content clarity.
 
-    ```bash
-    # On macOS/Linux
-    open index.html 
+***
 
-    # On Windows
-    start index.html
-    ```
+## ✨ Acceptance Criteria
 
-The Profile Card will load immediately, and the **Current Time in Milliseconds** counter will begin updating.
+### Contact Us Page
+
+* All required fields exist and use the correct `data-testid` attributes.
+* Client-side JavaScript or HTML5 validation prevents invalid submissions.
+* Success message (`test-contact-success`) is only visible after a valid submission and form reset.
+
+### About Me Page
+
+* All required sections exist with the correct `data-testid` attributes.
+* Content is structured using correct semantic HTML (`<main>`, `<section>`, `<h2>`, `<ul>`, `<p>`).
+
+### General Requirements
+
+* **Semantic HTML** is used consistently throughout both new pages.
+* **Accessibility** is maintained or improved (labels, `alt` text, ARIA associations).
+* The application is **fully responsive** across mobile, tablet, and desktop viewports.
+* The code is modular, readable, and follows consistent naming conventions.
+
+***
+
+## 📬 Submission
+
+Host your completed application on a platform (e.g., Netlify, GitHub Pages, Vercel).
